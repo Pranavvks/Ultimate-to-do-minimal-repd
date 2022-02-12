@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1055225363327",
+    "project_id": "ultimatetodobackend",
+    "storage_bucket": "ultimatetodobackend.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1055225363327:android:b2b9dbf075bdd20d14784a",
+        "android_client_info": {
+          "package_name": "com.example.ultimate_to_do_repd_sample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1055225363327-p7731k4d7470tnalv67om3a10lt2lt4h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-vaFdCyl2ibJEzWRurf1ZDxvtT6q5uYs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1055225363327-p7731k4d7470tnalv67om3a10lt2lt4h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
