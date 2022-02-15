@@ -14,7 +14,11 @@ class DailyTodoApiDb {
   List<DailyTasks> x = [];
 
   Future<void> createUser() async {
-    anonymoususer = FirebaseAuth.instance.currentUser;
+    //FirebaseAuth.instance.signInAnonymously();
+    if(FirebaseAuth.instance.currentUser != null)
+    anonymoususer =  FirebaseAuth.instance.signInAnonymously();
+    else
+      anonymoususer = FirebaseAuth.instance.currentUser;
   }
 
   BehaviorSubject<DocumentSnapshot<Map<String, dynamic>>> getDailyTasks() {
