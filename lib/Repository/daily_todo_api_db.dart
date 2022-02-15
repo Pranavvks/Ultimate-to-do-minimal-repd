@@ -25,9 +25,9 @@ class DailyTodoApiDb {
     var stream =
         db.collection("Daily_tasks").doc(anonymoususer.user!.uid).snapshots();
 
-    (stream.listen((event) {
-      print(event.data());
-    }));
+//     (stream.listen((event) {
+//       print(event.data());
+//     }));
 
     todoStreamController.sink.addStream(stream);
 
