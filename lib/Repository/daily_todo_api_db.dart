@@ -74,7 +74,7 @@ class DailyTodoApiDb {
             "isCompleted": false,
           }
         ]
-      }).whenComplete(() => getDailyTasks());
+      })
     } else {
       var x = [
         {
@@ -88,8 +88,7 @@ class DailyTodoApiDb {
       await db
           .collection("Daily_tasks")
           .doc(anonymoususer.user!.uid)
-          .update({"Tasks": FieldValue.arrayUnion(x)}).whenComplete(
-              () => getDailyTasks());
+          .update({"Tasks": FieldValue.arrayUnion(x)});
     }
   }
 }
