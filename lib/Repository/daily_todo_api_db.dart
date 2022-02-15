@@ -14,7 +14,7 @@ class DailyTodoApiDb {
   List<DailyTasks> x = [];
 
   Future<void> createUser() async {
-    anonymoususer = await FirebaseAuth.instance.signInAnonymously();
+    anonymoususer = FirebaseAuth.instance.currentUser;
   }
 
   BehaviorSubject<DocumentSnapshot<Map<String, dynamic>>> getDailyTasks() {
@@ -70,7 +70,7 @@ class DailyTodoApiDb {
             "isCompleted": false,
           }
         ]
-      });
+      }).whenComplete(() => getDailyTasks());
     } else {
       var x = [
         {
@@ -84,7 +84,8 @@ class DailyTodoApiDb {
       await db
           .collection("Daily_tasks")
           .doc(anonymoususer.user!.uid)
-          .update({"Tasks": FieldValue.arrayUnion(x)});
+          .update({"Tasks": FieldValue.arrayUnion(x)}).whenComplete(
+              () => getDailyTasks());
     }
   }
 }

@@ -45,6 +45,7 @@ class _AddTasksScreenHelperState extends State<AddTasksScreenHelper> {
       backgroundColor: Color.fromRGBO(79, 116, 255, 1),
       floatingActionButton: InkWell(
         onTap: () => {
+          print(task),
           BlocProvider.of<TasksBloc>(context).add(CreateEverydayTasks(task)),
         },
         child: SizedBox(
